@@ -1,13 +1,17 @@
 /** @jsx jsx */
 
+import {
+  MenuButton as ReachMenuButton,
+  MenuButtonProps as ReachMenuButtonProps,
+} from '@reach/menu-button'
 import { jsx, SxStyleProp, useThemeUI } from '@theme-ui/core'
 import dotProp from 'dot-prop'
 import mapObject from 'map-obj'
 import { forwardRef } from 'react'
 
-type HtmlButtonProps = JSX.IntrinsicElements['button']
+import { defaultButtonSx } from './Button'
 
-export interface ButtonProps extends HtmlButtonProps {
+export interface ButtonProps extends ReachMenuButtonProps {
   variant?: string
   size?: 's' | 'm' | 'l'
   color?: string
@@ -15,19 +19,7 @@ export interface ButtonProps extends HtmlButtonProps {
 
 const colorKey = '__color'
 
-export const defaultButtonSx: SxStyleProp = {
-  appearance: 'none',
-  display: 'inline-flex',
-  alignItems: 'center',
-  textAlign: 'center',
-  lineHeight: 'inherit',
-  textDecoration: 'none',
-  fontSize: 'inherit',
-  border: 0,
-  borderRadius: 4,
-}
-
-export const Button = forwardRef(
+export const MenuButton = forwardRef(
   (
     { variant = 'fill', size = 'm', color = 'primary', ...props }: ButtonProps,
     ref: React.Ref<any>,
@@ -45,7 +37,7 @@ export const Button = forwardRef(
     )
     const sizeSx = dotProp.get(theme || {}, `buttons.sizes.${size}`, {})
     return (
-      <button
+      <ReachMenuButton
         {...props}
         ref={ref}
         sx={{

@@ -66,6 +66,7 @@
     "@reach/accordion": "^0.9.1",
     "@reach/checkbox": "^0.9.1",
     "@reach/dialog": "^0.9.1",
+    "@reach/menu-button": "^0.9.1",
     "@reach/tabs": "^0.9.1",
     "@theme-ui/core": "^0.4.0-alpha.0",
     "@theme-ui/css": "^0.4.0-alpha.0",

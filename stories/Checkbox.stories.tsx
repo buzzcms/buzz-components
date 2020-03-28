@@ -35,18 +35,18 @@ export function Default() {
         >
           Change me
         </Checkbox>
-        <Button
-          variant="outline"
-          sx={{ mt: 2 }}
-          size="s"
-          onClick={() => setState('mixed')}
-        >
-          Make mixed
-        </Button>
+        <div>
+          <Button
+            variant="outline"
+            sx={{ mt: 2 }}
+            size="s"
+            onClick={() => setState('mixed')}
+          >
+            Make mixed
+          </Button>
+        </div>
         <h2>Not changed</h2>
-        <Checkbox sx={{ ml: 2 }} checked>
-          Checked
-        </Checkbox>
+        <Checkbox checked>Checked</Checkbox>
         <Checkbox sx={{ ml: 2 }} checked={false}>
           Unchecked
         </Checkbox>

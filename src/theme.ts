@@ -84,7 +84,8 @@ export const theme: BuzzTheme = {
           border: 'light',
           borderColor: '__color_focus',
         },
-        '&:active': {
+        // FIXME: Should move data-selected to another block. Currently, it only used in MenuItem
+        '&:active,&[data-selected]': {
           bg: '__color_active',
           borderColor: '__color_active',
         },
@@ -104,7 +105,7 @@ export const theme: BuzzTheme = {
           color: '__color_focus',
           borderColor: '__color_focus',
         },
-        '&:active': {
+        '&:active,&[data-selected]': {
           color: '__color_active',
           borderColor: '__color_active',
         },
@@ -122,7 +123,7 @@ export const theme: BuzzTheme = {
         '&:hover,&:focus': {
           color: '__color_focus',
         },
-        '&:active': {
+        '&:active,&[data-selected]': {
           color: '__color_active',
         },
         '&:disabled': {
