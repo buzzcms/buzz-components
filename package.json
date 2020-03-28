@@ -1,5 +1,6 @@
 {
-  "name": "buzzcms-rich-text",
+  "name": "buzz-components",
+  "homepage": "https://buzzcms.github.io/buzzcms-components/",
   "version": "0.3.1",
   "license": "MIT",
   "main": "dist/index.js",
