@@ -1,10 +1,14 @@
 /** @jsx jsx */
 
-import { MixedCheckboxProps, useMixedCheckbox } from '@reach/checkbox'
+import {
+  CustomCheckboxContainer,
+  CustomCheckboxInput,
+  MixedCheckboxProps,
+} from '@reach/checkbox'
 import { MixedOrBool } from '@reach/checkbox/dist/mixed'
 import { jsx, useThemeUI } from '@theme-ui/core'
 import dotProp from 'dot-prop'
-import React, { forwardRef, useRef } from 'react'
+import React, { forwardRef } from 'react'
 
 import { Icon, SvgProps } from './Icon'
 
@@ -38,43 +42,52 @@ export const Checkbox = forwardRef(
     }: CheckboxProps,
     ref: React.Ref<any>,
   ) => {
-    const inputRef = useRef(null)
-    const [inputProps, state] = useMixedCheckbox(inputRef, {
-      defaultChecked: undefined,
-      checked,
-      onChange,
-    })
     const { theme } = useThemeUI()
     const sizeSx = dotProp.get(theme || {}, `buttons.sizes.${size}`, {})
     return (
-      <label
-        className={className}
-        ref={ref}
-        sx={{ display: 'flex', alignItems: 'center', color: color }}
-      >
-        <CheckboxIcon
-          aria-hidden="true"
-          checked={state.checked}
-          sx={{ mr: 2 }}
-          size={24}
-        />
-        <input
-          ref={inputRef}
-          {...inputProps}
-          {...props}
-          sx={{
-            position: 'absolute',
-            opacity: 0,
-            zIndex: -1,
-            width: 1,
-            height: 1,
-            overflow: 'hidden',
-            color,
-            ...sizeSx,
-          }}
-        />
-        {children}
-      </label>
+      <CustomCheckboxContainer checked={checked} onChange={onChange} {...props}>
+        {({ inputRef, checked, focused }) => (
+          <label
+            className={className}
+            ref={ref}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              color: props.disabled ? `${color}_disabled` : color,
+              cursor: props.disabled ? 'not-allowed' : 'pointer',
+              px: 2,
+              py: 1,
+              outline: focused ? '1px solid' : undefined,
+              outlineColor: `${color}_outline`,
+              '&:active': {
+                outline: focused ? '1px solid' : undefined,
+                outlineColor: `${color}_outline`,
+              },
+            }}
+          >
+            <CheckboxIcon
+              aria-hidden="true"
+              checked={checked}
+              sx={{ mr: 2 }}
+              size={24}
+            />
+            <CustomCheckboxInput
+              ref={inputRef as any}
+              sx={{
+                position: 'absolute',
+                opacity: 0,
+                zIndex: -1,
+                width: 1,
+                height: 1,
+                overflow: 'hidden',
+                color,
+                ...sizeSx,
+              }}
+            />
+            {children}
+          </label>
+        )}
+      </CustomCheckboxContainer>
     )
   },
 )

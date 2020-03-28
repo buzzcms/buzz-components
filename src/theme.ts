@@ -7,19 +7,22 @@ export const colors = {
   background: '#fefeff',
 
   primary: 'hsl(208,80%,40%, 1)',
-  primary_disabled: 'hsl(208, 31%, 50%, 1)',
+  primary_disabled: 'hsl(208, 10%, 50%, 1)',
   primary_focus: 'hsl(208, 80%, 25%, 1)',
   primary_active: 'hsl(208, 80%, 15%, 1)',
+  primary_outline: 'hsl(208, 31%, 50%, 0.2)',
 
   secondary: 'hsl(20, 80%, 40%, 1)',
-  secondary_disabled: 'hsl(20, 31%, 50%, 1)',
+  secondary_disabled: 'hsl(20, 10%, 50%, 1)',
   secondary_focus: 'hsl(20, 80%, 25%, 1)',
   secondary_active: 'hsl(20, 80%, 15%, 1)',
+  secondary_outline: 'hsl(20, 80%, 15%, 0.2)',
 
   neutral: 'hsl(0, 0%, 40%, 1)',
   neutral_disabled: 'hsl(0, 0%, 60%, 1)',
-  neutral_focus: 'hsl(0,0%,30%,1)',
-  neutral_active: 'hsl(0,0%,15%,1)',
+  neutral_focus: 'hsl(0, 0%, 30%, 1)',
+  neutral_active: 'hsl(0, 0%, 15%, 1)',
+  neutral_outline: 'hsl(0, 0%, 15%, 0.2)',
 }
 
 const icons: { [key: string]: React.SFC } = {
