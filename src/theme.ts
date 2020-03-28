@@ -1,29 +1,39 @@
 import { Theme } from '@theme-ui/css'
 
-export const colors: any = {
+import { Square, SquareCheck, SquareMinus } from './icons'
+
+export const colors = {
   text: '#333',
   background: '#fefeff',
-  primary: {
-    default: 'hsl(208,80%,40%, 1)',
-    disabled: 'hsl(208, 31%, 50%, 1)',
-    focus: 'hsl(208, 80%, 25%, 1)',
-    active: 'hsl(208, 80%, 15%, 1)',
-  },
-  secondary: {
-    default: 'hsl(20, 80%, 40%, 1)',
-    disabled: 'hsl(20, 31%, 50%, 1)',
-    focus: 'hsl(20, 80%, 25%, 1)',
-    active: 'hsl(20, 80%, 15%, 1)',
-  },
-  neutral: {
-    default: 'hsl(0, 0%, 40%, 1)',
-    disabled: 'hsl(0, 0%, 60%, 1)',
-    focus: 'hsl(0,0%,30%,1)',
-    active: 'hsl(0,0%,15%,1)',
-  },
+
+  primary: 'hsl(208,80%,40%, 1)',
+  primary_disabled: 'hsl(208, 31%, 50%, 1)',
+  primary_focus: 'hsl(208, 80%, 25%, 1)',
+  primary_active: 'hsl(208, 80%, 15%, 1)',
+
+  secondary: 'hsl(20, 80%, 40%, 1)',
+  secondary_disabled: 'hsl(20, 31%, 50%, 1)',
+  secondary_focus: 'hsl(20, 80%, 25%, 1)',
+  secondary_active: 'hsl(20, 80%, 15%, 1)',
+
+  neutral: 'hsl(0, 0%, 40%, 1)',
+  neutral_disabled: 'hsl(0, 0%, 60%, 1)',
+  neutral_focus: 'hsl(0,0%,30%,1)',
+  neutral_active: 'hsl(0,0%,15%,1)',
 }
 
-export const theme: Theme = {
+const icons: { [key: string]: React.SFC } = {
+  'square-check': SquareCheck,
+  'square-minus': SquareMinus,
+  square: Square,
+}
+
+export interface BuzzTheme extends Theme {
+  icons: { [key: string]: React.SFC }
+}
+
+export const theme: BuzzTheme = {
+  icons,
   fonts: {
     body: 'Open Sans, sans-serif',
     raised: 'Oswald, sans-serif;',
@@ -47,15 +57,15 @@ export const theme: Theme = {
     transparent: '1px solid transparent',
   },
   fontSizes: {
-    xxs: '0.5rem',
+    '2xs': '0.5rem',
     xs: '0.725rem',
     s: '0.875rem',
     m: '1rem',
     l: '1.25rem',
     xl: '1.5rem',
-    xxl: '2rem',
-    xxxl: '3rem',
-    xxxxl: '4rem',
+    '2xl': '2rem',
+    '3xl': '3rem',
+    '4xl': '4rem',
   },
   colors,
   buttons: {
@@ -64,56 +74,56 @@ export const theme: Theme = {
         cursor: 'pointer',
         color: 'background',
         border: 'light',
-        borderColor: '__color.default',
-        bg: '__color.default',
+        borderColor: '__color',
+        bg: '__color',
         '&:hover,&:focus': {
-          bg: '__color.focus',
+          bg: '__color_focus',
           border: 'light',
-          borderColor: '__color.focus',
+          borderColor: '__color_focus',
         },
         '&:active': {
-          bg: '__color.active',
-          borderColor: '__color.active',
+          bg: '__color_active',
+          borderColor: '__color_active',
         },
         '&:disabled': {
-          bg: '__color.disabled',
-          borderColor: '__color.disabled',
+          bg: '__color_disabled',
+          borderColor: '__color_disabled',
           cursor: 'not-allowed',
         },
       },
       outline: {
         border: 'light',
-        borderColor: '__color.default',
-        color: '__color.default',
+        borderColor: '__color',
+        color: '__color',
         cursor: 'pointer',
         bg: 'background',
         '&:hover,&:focus': {
-          color: '__color.focus',
-          borderColor: '__color.focus',
+          color: '__color_focus',
+          borderColor: '__color_focus',
         },
         '&:active': {
-          color: '__color.active',
-          borderColor: '__color.active',
+          color: '__color_active',
+          borderColor: '__color_active',
         },
         '&:disabled': {
-          color: '__color.disabled',
-          borderColor: '__color.disabled',
+          color: '__color_disabled',
+          borderColor: '__color_disabled',
           cursor: 'not-allowed',
         },
       },
       minimal: {
         border: 'transparent',
-        color: '__color.default',
+        color: '__color',
         cursor: 'pointer',
         bg: 'background',
         '&:hover,&:focus': {
-          color: '__color.focus',
+          color: '__color_focus',
         },
         '&:active': {
-          color: '__color.active',
+          color: '__color_active',
         },
         '&:disabled': {
-          color: '__color.disabled',
+          color: '__color_disabled',
           cursor: 'not-allowed',
         },
       },

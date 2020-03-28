@@ -55,6 +55,7 @@
     "husky": "^4.2.3",
     "react": "^16.12.0",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.9.0",
     "ts-loader": "^6.2.2",
     "tsdx": "^0.13.0",
     "tslib": "^1.11.1",
@@ -62,6 +63,7 @@
   },
   "dependencies": {
     "@reach/accordion": "^0.9.1",
+    "@reach/checkbox": "^0.9.1",
     "@reach/dialog": "^0.9.1",
     "@reach/tabs": "^0.9.1",
     "@theme-ui/core": "^0.4.0-alpha.0",

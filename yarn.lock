@@ -1286,6 +1286,18 @@
     "@reach/utils" "^0.9.0"
     tslib "^1.10.0"
 
+"@reach/checkbox@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@reach/checkbox/-/checkbox-0.9.1.tgz#915d4a3046a6cf7257a6018163afe06a9eeb6ff0"
+  integrity sha512-D22wlu3HDmsTWC+ws8EhuV6F/x+RiPowfKsUENCHZ54dw2fYnOTgFeEbvEFYcTFZGICYUexRt/IkwJkpEYEQKw==
+  dependencies:
+    "@reach/auto-id" "^0.9.0"
+    "@reach/machine" "^0.9.0"
+    "@reach/utils" "^0.9.0"
+    "@xstate/fsm" "^1.3.0"
+    tslib "^1.10.0"
+    warning "^4.0.3"
+
 "@reach/descendants@^0.9.1":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@reach/descendants/-/descendants-0.9.1.tgz#f17eec0a245d3b6a7cccd020b8edf5b7d1115fc2"
@@ -1304,6 +1316,15 @@
     prop-types "^15.7.2"
     react-focus-lock "^2.2.1"
     react-remove-scroll "^2.2.0"
+    tslib "^1.10.0"
+
+"@reach/machine@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@reach/machine/-/machine-0.9.0.tgz#3dc0ebeb13616bf844b419eed9e08021e0823dca"
+  integrity sha512-TCcXsLsh2R03sfK9z1pmo2PohcZLlo6sqxoKe3j/Zf+dP3COdp6y0qKxsE/1Q3CsdlF924i+LsdFi9RxS6nz8g==
+  dependencies:
+    "@reach/utils" "^0.9.0"
+    "@xstate/fsm" "^1.3.0"
     tslib "^1.10.0"
 
 "@reach/portal@^0.9.0":
@@ -2338,6 +2359,11 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@xstate/fsm@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@xstate/fsm/-/fsm-1.3.0.tgz#2a9c2627961473d23c7f4ad4d2db011e76d3975e"
+  integrity sha512-dDXp0zEa3r6MzSM1UhqqGlxHna4CH1F2DttmZVpWk7tK33E1bBfV9EAaekmdD091YZs+kaI65oNQhWA55HgJOg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -9571,6 +9597,13 @@ react-hotkeys@2.0.0:
   integrity sha512-3n3OU8vLX/pfcJrR3xJ1zlww6KS1kEJt0Whxc4FiGV+MJrQ1mYSYI3qS/11d2MJDFm8IhOXMTFQirfu6AVOF6Q==
   dependencies:
     prop-types "^15.6.1"
+
+react-icons@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.9.0.tgz#89a00f20a0e02e6bfd899977eaf46eb4624239d5"
+  integrity sha512-gKbYKR+4QsD3PmIHLAM9TDDpnaTsr3XZeK1NTAb6WQQ+gxEdJ0xuCgLq0pxXdS7Utg2AIpcVhM1ut/jlDhcyNg==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-inspector@^4.0.0:
   version "4.0.0"
