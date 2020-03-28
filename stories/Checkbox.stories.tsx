@@ -44,10 +44,18 @@ export function Default() {
           Make mixed
         </Button>
         <h2>Not changed</h2>
-        <Checkbox checked>Checked</Checkbox>
-        <Checkbox checked={false}>Unchecked</Checkbox>
-        <Checkbox checked="mixed">Mixed</Checkbox>
-        <Checkbox disabled>Disabled</Checkbox>
+        <Checkbox sx={{ ml: 2 }} checked>
+          Checked
+        </Checkbox>
+        <Checkbox sx={{ ml: 2 }} checked={false}>
+          Unchecked
+        </Checkbox>
+        <Checkbox sx={{ ml: 2 }} checked="mixed">
+          Mixed
+        </Checkbox>
+        <Checkbox sx={{ ml: 2 }} disabled>
+          Disabled
+        </Checkbox>
       </div>
     </ThemeProvider>
   )
@@ -60,23 +68,30 @@ export function WithColors() {
         <div key={color}>
           <h2 sx={{ color }}>{color}</h2>
           <Checkbox color={color}>Change me</Checkbox>
-          <Checkbox disabled color={color}>
+          <Checkbox sx={{ ml: 3 }} disabled color={color}>
             Disabled
           </Checkbox>
           <h4>State</h4>
-          {values.map(checked => {
-            const label =
-              checked === 'mixed'
-                ? 'Mixed'
-                : checked === true
-                ? 'Checked'
-                : 'Unchecked'
-            return (
-              <Checkbox key={label} color={color} checked={checked}>
-                {label}
-              </Checkbox>
-            )
-          })}
+          <div>
+            {values.map((checked, idx) => {
+              const label =
+                checked === 'mixed'
+                  ? 'Mixed'
+                  : checked === true
+                  ? 'Checked'
+                  : 'Unchecked'
+              return (
+                <Checkbox
+                  sx={{ ml: idx > 0 ? 3 : 0 }}
+                  key={label}
+                  color={color}
+                  checked={checked}
+                >
+                  {label}
+                </Checkbox>
+              )
+            })}
+          </div>
         </div>
       ))}
     </ThemeProvider>
@@ -104,7 +119,12 @@ export function WithCustomIcons() {
                 ? 'Checked'
                 : 'Unchecked'
             return (
-              <Checkbox key={label} color={color} checked={checked}>
+              <Checkbox
+                sx={{ ml: 3 }}
+                key={label}
+                color={color}
+                checked={checked}
+              >
                 {label}
               </Checkbox>
             )
